@@ -37,11 +37,12 @@ end
 
 
 # Get Sandwich - Two pieces of bread. Return the string if there is something between the slices. 
+# Not done
 def get_sandwich(str)
     str.size.times do |food|
         component = str[food..(food - 1)]
         if component == "bread"
-            return str[component.."bread"]
+            return str[component..(str.size - 5)]
         end
     end
 end
@@ -50,10 +51,10 @@ end
 # puts get_sandwich("breadbread") # Empty
 
 
-# Shift left - Move every value in a list one value to the left by rearranging them. 
-        # [6, 2, 5, 3] -> [2, 5, 3, 6]
+# # Shift left - Move every value in a list one value to the left by rearranging them. 
+#         # [6, 2, 5, 3] -> [2, 5, 3, 6]
 # Done
-        def shiftleft(list)
+def shiftleft(list)
     first = list[0]
     (list.size - 1).times do |i|
         list[i] = list[i + 1]
@@ -65,18 +66,21 @@ end
 
 
 # Can Balance - Return true if a list can be split so that the sum of both sides are equal
-def balance(list)
-    list.size.times do |num|
-        if list.size % 2 = 1
-            odds = list[num - 1]
-        end
-        if list.size % 2 = 1
-            evens = list[num]
-        end
-    if evens = odds
-        return false
-    end
-end
+# def balance(list)
+#     list.size.times do |num|
+#         if list.size % 2 == 1
+#             odds = list[num - 1] 
+#             return odds 
+#         end
+#     end
+#     if list.size % 2 == 1
+#         evens  = list[num] 
+#     return evens
+#     end
+# end
+# if evens = odds
+#     return true
+# end
 # puts balance([1, 2, 3, 4]) #  1+4, 2+3
 
 
@@ -91,9 +95,9 @@ def countcode(list)
     end
     return count
 end
-# puts countcode("code") # 1
-# puts countcode("cooe") # 1
-# puts countcode("cope") # 1
+puts countcode("code") # 1
+puts countcode("cooe") # 1
+puts countcode("cope") # 1
 
 
 # Middle Way - Given two lists, return a new list that has both of their middle elements. 
@@ -113,8 +117,8 @@ def listtwo(list2)
         return list2[(sorted.size / 2) + (sorted.size / 2 - 1)] / 2
     end
 end
-puts listone([1, 2, 3])
-puts listtwo([4, 5, 6])
+# puts listone([1, 2, 3])
+# puts listtwo([4, 5, 6])
 # puts listone(list1), listtwo(list2)
 
 
@@ -149,11 +153,10 @@ end
 # puts max_span([1, 2, 3, 4, 5, 6]) # 6
 
 
-# G Happy - If there's a lowercase "g" in an array, it's happy if it's next to another "g." Return true if all "g's" are happy. 
+# # G Happy - If there's a lowercase "g" in an array, it's happy if it's next to another "g." Return true if all "g's" are happy. 
 def g_happy(list)
     list.size.times do |g|
-        slice = list[g]
-        if slice = list[g - 1] || list[g + 1]
+        if list[g] = list[g - 1] || list[g + 1]
             return true
         end
     end
